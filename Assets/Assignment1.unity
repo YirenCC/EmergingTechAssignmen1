@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 240058258}
   - component: {fileID: 240058257}
   - component: {fileID: 240058256}
+  - component: {fileID: 240058262}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -139,11 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e8857020390efa448e286d9919a4de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 1
-  gravity: 2
-  speed: 2
-  m_MaxSpeed: 10
-  jumpSpeed: 2
+  a: 0
+  b: 0
+  c: 0
+  d: 0
 --- !u!54 &240058257
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!23 &240058258
 MeshRenderer:
@@ -223,6 +223,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &240058262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240058255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d620af5ac8b8fb34bb3217dd4158a749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 2
+  speed: 2
+  m_MaxSpeed: 10
 --- !u!1 &530214998
 GameObject:
   m_ObjectHideFlags: 0

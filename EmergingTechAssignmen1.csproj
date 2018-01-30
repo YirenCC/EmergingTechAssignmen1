@@ -129,6 +129,7 @@
     <Compile Include="Assets\ARDUnity\Scripts\Utility\ListView.cs" />
     <Compile Include="Assets\ARDUnity\Scripts\Utility\SliderSnap.cs" />
     <Compile Include="Assets\ARDUnity\Scripts\Utility\ToggleEvent.cs" />
+    <Compile Include="Assets\Control.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ARDUnity\Examples\Buzzer\SampleSongs.txt" />
