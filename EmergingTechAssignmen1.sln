@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmergingTechAssignmen1", "EmergingTechAssignmen1.csproj", "{13CB3FFE-4454-D108-4795-70399F8A7E80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmergingTechAssignmen1.Editor", "EmergingTechAssignmen1.Editor.csproj", "{EF9DDB37-F284-9363-CE9E-43BD7FD69BF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13CB3FFE-4454-D108-4795-70399F8A7E80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13CB3FFE-4454-D108-4795-70399F8A7E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13CB3FFE-4454-D108-4795-70399F8A7E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13CB3FFE-4454-D108-4795-70399F8A7E80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF9DDB37-F284-9363-CE9E-43BD7FD69BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF9DDB37-F284-9363-CE9E-43BD7FD69BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF9DDB37-F284-9363-CE9E-43BD7FD69BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF9DDB37-F284-9363-CE9E-43BD7FD69BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

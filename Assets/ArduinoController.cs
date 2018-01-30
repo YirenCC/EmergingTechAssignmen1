@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using System.IO.Ports;
 
@@ -22,10 +23,19 @@ public class ArduinoController : MonoBehaviour
         serial.Open();
         m_Rigidbody = gameObject.GetComponent<Rigidbody>();
         m_Grounded = true;
+
+        StartCoroutine
+(
+    AsynchronousReadFromArduino
+    ((string s) => inputCallback(s),     // Callback
+        () => Debug.LogError("Error!"), // Error callback
+        10000f                          // Timeout (milliseconds)
+    )
+);
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void inputCallback(string s)
     {
         string buttonS = serial.ReadLine();
         value = int.Parse(buttonS);
@@ -53,7 +63,52 @@ public class ArduinoController : MonoBehaviour
             m_Rigidbody.velocity = Vector3.ClampMagnitude(m_Rigidbody.velocity, m_MaxSpeed);
             m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, l_y, m_Rigidbody.velocity.z);
         }
+
     }
+    // Update is called once per frame
+    void Update()
+    {
+
+        return;    
+    }
+
+    public IEnumerator AsynchronousReadFromArduino(Action<string> callback, Action fail = null, float timeout = float.PositiveInfinity)
+    {
+        DateTime initialTime = DateTime.Now;
+        DateTime nowTime;
+        TimeSpan diff = default(TimeSpan);
+
+        string dataString = null;
+
+        do
+        {
+            try
+            {
+                dataString = serial.ReadLine();
+            }
+            catch (TimeoutException)
+            {
+                dataString = null;
+            }
+
+            if (dataString != null)
+            {
+                callback(dataString);
+                yield return null;
+            }
+            else
+                yield return new WaitForSeconds(0.05f);
+
+            nowTime = DateTime.Now;
+            diff = nowTime - initialTime;
+
+        } while (diff.Milliseconds < timeout);
+
+        if (fail != null)
+            fail();
+        yield return null;
+    }
+
 
     void OnCollisionEnter(Collision collision)
     {
@@ -67,6 +122,6 @@ public class ArduinoController : MonoBehaviour
             }
         }
     }
-
+    
 }
 
